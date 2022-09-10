@@ -6,34 +6,31 @@ import 'package:flutter/material.dart';
 Widget Menu(BuildContext context)
 {
   return Drawer(
-    child: Center(
-      child: Column(
+      child: ListView(
           children: <Widget>[
-            new UserAccountsDrawerHeader(
-              accountEmail: new Container(
-                  child: Text(
-                  'igor.rizzi2@gmail.com',
-                  style: TextStyle(color: Colors.black),
-                )
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue),
+              margin: EdgeInsets.only(bottom: 10.0),
+              currentAccountPicture: Container(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+
+                        image:
+                        NetworkImage("https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png"))),
               ),
               accountName: new Container(
                   child: Text(
-                    'Igor Henrique Rizzi',
-                    style: TextStyle(color: Colors.black),
-                  )
-              ),
-              decoration: BoxDecoration(color: Colors.white),
-              currentAccountPicture: new CircleAvatar(
-                radius: 50.0,
-                backgroundColor: const Color(0xFF778899),
-                backgroundImage:
-                NetworkImage("http://tineye.com/images/widgets/mona.jpg"),
-              ),
+                    'Igor',
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  )),
+              accountEmail: new Container(
+                  child: Text(
+                    'igor.rizzi2@gmail.com',
+                    style: TextStyle(color: Colors.white),
+                  )),
             ),
-      ],
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
             ListTile(
               title: const Text('Home Page'),
               onTap: () {
@@ -44,7 +41,7 @@ Widget Menu(BuildContext context)
               },
             ),
             ListTile(
-              title: const Text('About Page'),
+              title: const Text('Home Page'),
               onTap: () {
                 Navigator.push(
                     context,
@@ -52,9 +49,7 @@ Widget Menu(BuildContext context)
                 );
               },
             ),
-          ],
-        ),
-      ),
-    ),
+          ]
+      )
   );
 }
