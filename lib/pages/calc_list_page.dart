@@ -94,6 +94,7 @@ class _CalcListPageState extends State<CalcListPage> {
                   ]
               ),
               TextField(
+                  keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
                   controller: _inputNum1,
                   style: TextStyle(fontSize: 16)),
@@ -101,6 +102,7 @@ class _CalcListPageState extends State<CalcListPage> {
                 height: 10,
               ),
               TextField(
+                  keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
                   controller: _inputNum2,
                   style: TextStyle(fontSize: 16)),
