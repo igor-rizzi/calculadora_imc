@@ -1,3 +1,5 @@
+import 'package:calculadora_imc/pages/calc_list_page.dart';
+
 import '../pages/about_page.dart';
 import '../pages/home_page.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,11 +43,20 @@ Widget Menu(BuildContext context)
               },
             ),
             ListTile(
-              title: const Text('Home Page'),
+              title: const Text('About Page'),
               onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => AboutPage(title: 'About Page'))
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Calculadora Lista'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CalcListPage(title: 'Calc List Page'))
                 );
               },
             ),
